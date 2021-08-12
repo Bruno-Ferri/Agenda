@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag "style.css" %> 
+<h1>Agenda Telefônica</h1>
+<h3>Contatos:</h3>
+<%= link_to 'Inserir', new_contato_path, class: "inserir" %>
+<div class="container">
+ <table>
+<% @contatos.each do |contato| %>
+    <tr>
+     <td><%= contato.nome %></td>
+     <td><%= contato.numero %></td>
+     <td><%= link_to image_tag("editar.png"), edit_contato_path(contato) %></td>
+     <td><%= link_to image_tag("excluir.png"), contato_path(contato), method: :delete, data: { confirm: 'Quer apagar este contato?' } %></td>
+    </tr>
+<% end %>
+ </table>
+</div>

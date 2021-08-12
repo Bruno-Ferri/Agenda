@@ -1,0 +1,9 @@
+<div class="form">
+<%= form_for @contato do |f| %>
+<%= f.label :nome, 'Nome' %>
+<%= f.text_field :nome %>
+<%= f.label :numero, 'Número' %>
+<%= f.text_field :numero %>
+<%= f.submit 'Editar' %>
+<% end %>
+</div>
